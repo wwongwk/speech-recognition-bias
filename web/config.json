@@ -1,10 +1,10 @@
 {
   "API": {
-    "empth": "https://api.webempath.net/v2/analyzeWav",
+    "empath": "https://api.webempath.net/v2/analyzeWav",
     "deepaffect": "https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/recognise_emotion"
   },
   "Key": {
-    "empath": "-DfigHIMK3a9HBwozQONFbp3DLdLCNtBlrSdFJ5UbhY",
+    "empath": "eCZq7YPVGsLnjS5MQp-NNJBTugv90bWVm_ntBYu0XaA",
     "deepaffect": "QUV3GNwPB7EPk5TWJQUjospamvusFGK3"
   },
   "Lib": "lib/lib_arm64.so"
