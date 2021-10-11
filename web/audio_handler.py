@@ -1,6 +1,4 @@
 from pydub import AudioSegment
-from scipy.io import wavfile
-import base64
 import io
 
 def empathWav(ogg):
@@ -31,6 +29,3 @@ def down_sample_wav_16000(wav_buffer):
     as_audio= AudioSegment(wav_buffer.read())
     return audio_segments_to_bytes(as_audio, '1', '16000') 
 
-
-#by = readWavFromPath('./test/1088_IEO_ANG_HI.wav')
-#print(base64.b64encode(down_sample_wav_16000(by).read()).decode('utf-8'))
