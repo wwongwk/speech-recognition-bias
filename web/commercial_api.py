@@ -9,7 +9,9 @@ import base64
 import json
 import copy
 
-f = open('config.json')
+abs_path = os.getcwd()
+print(abs_path)
+f = open(abs_path + '/config.json')
 config = json.load(f)
 
 
@@ -17,7 +19,7 @@ API = config['API']
 Key = config['Key']
 vk.init(config['Lib'])
 
-print("Initialized... lib:", config['Lib'])
+print("Initialized... lib:", abs_path + "/" + config['Lib'])
 
 # params: audio        -- bytes : sample rate 44100hz and 2 channel
 #         index        -- the index coule be a random string or an integer
