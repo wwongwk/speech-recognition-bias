@@ -14,9 +14,10 @@ import json
 sys.path.append("./lib")
 import Vokaturi
 
-print("Loading library...")
-Vokaturi.load("lib/lib_arm64.so")
-print("Analyzed by: %s" % Vokaturi.versionAndLicense())
+def init(path):
+    print("Loading library...")
+    Vokaturi.load(path)
+    print("Analyzed by: %s" % Vokaturi.versionAndLicense())
 
 print("Reading sound file...")
 

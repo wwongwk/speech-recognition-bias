@@ -9,12 +9,15 @@ import base64
 import json
 import copy
 
-API = {'empath':'https://api.webempath.net/v2/analyzeWav',
-        'deepaffect':'https://proxy.api.deepaffects.com/audio/generic/api/v2/sync/recognise_emotion'}
+f = open('config.json')
+config = json.load(f)
 
-key = {'empath':'-DfigHIMK3a9HBwozQONFbp3DLdLCNtBlrSdFJ5UbhY',
-        'deepaffect':'QUV3GNwPB7EPk5TWJQUjospamvusFGK3'}
 
+API = config['API']
+Key = config['Key']
+vk.init(config['Lib'])
+
+print("Initialized... lib:", config['Lib'])
 
 # params: audio        -- bytes : sample rate 44100hz and 2 channel
 #         index        -- the index coule be a random string or an integer
@@ -50,7 +53,7 @@ def emotion_detect(audio, index, audio_format):
 
     try:
         # Empath AR 11025 AC 1
-        response = requests.post(API['empath'], files = {"wav" : input_empath}, params = {'apikey' : key['empath']})
+        response = requests.post(API['empath'], files = {"wav" : input_empath}, params = {'apikey' : Key['empath']})
         result['empath'] = json.loads(response.text)
     except BaseException as error:
         result['empath'] = 'No Result'
@@ -62,7 +65,7 @@ def emotion_detect(audio, index, audio_format):
         response = requests.post(API['deepaffect'],
         headers = {'Content-Type':'application/json'},
         data = json.dumps(req),
-        params = {'apikey' : key['deepaffect']})
+        params = {'apikey' : Key['deepaffect']})
         text = response.text
         print("Respones from Deep Affect:{}".format(text))
         result['deepaffect'] = json.loads(text)
