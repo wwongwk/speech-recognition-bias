@@ -17,7 +17,7 @@ config = json.load(f)
 
 API = config['API']
 Key = config['Key']
-vk.init(config['Lib'])
+vk.init(abs_path + '/' + config['Lib'])
 
 print("Initialized... lib:", abs_path + "/" + config['Lib'])
 
