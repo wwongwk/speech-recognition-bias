@@ -59,6 +59,10 @@
             /* Add a grey background color to the table header and on hover */
             background-color: #042d4e;
         }
+
+        .img_border {
+            border: 8px solid #042d4e;
+        }
     </style>
 </head>
 
@@ -68,19 +72,19 @@
         Racial Bias in Speech
         Emotion Recognition Between Different Measures of
         Emotion</p>
-    <div style="margin: 0 auto; width: 80%; height: 100%; ">
+    <div style="margin: 0 auto; width: 100%; height: 100%;">
 
         <div
-            style="margin: 0 auto; width: 100%; padding-bottom: 20px; height: 100%; border-radius: 25px;border:10px; border-left-color: #000000;">
+            style="margin: 0 auto; width: 80%; padding-bottom: 20px; height: 100%; border-radius: 25px;border:10px; border-left-color: #000000;">
             <div
-                style="margin: 0; width: 80%; height:80%;background-color: #061929; opacity: 0.8; position:absolute;border-radius: 25px;border:10px; border-left-color: #000000;">
+                style="margin: 0; width: 80%; height:85%;background-color: #061929; opacity: 0.8; position:absolute;border-radius: 25px;border:10px; border-left-color: #000000;">
             </div>
             <div
-                style="margin: 0; width: 80%; height:80%;background-color: #0b518a; opacity: 0.8; position:absolute;border-radius: 25px;border:10px; border-left-color: #000000;">
+                style="margin: 0; width: 80%; height:85%;background-color: #0b518a; opacity: 0.8; position:absolute;border-radius: 25px;border:10px; border-left-color: #000000;">
             </div>
             <div style="position: absolute;padding: 20px;"> <input label="ck" name="ck_commerical" type="checkbox"
                     checked />
-                <label for="ck" style="color: navajowhite; font-size: 20px;">Commericial Models </label>
+                <label for="ck" style="color: navajowhite; font-size: 20px;">Commercial Models </label>
             </div>
             <div class="card" style="margin: 0 auto; background-color:transparent; border: 0; ">
 
@@ -96,66 +100,79 @@
                 </audio>
             </div>
             <!-- <p value="result">this is the result</p> -->
-            <table id="myTable" style="height: 100%;">
-                <tr class="header">
-                    <th style="width:20%;">Models</th>
-                    <th style="width:80%;">Prediction Results</th>
-                </tr>
-                <tr>
-                    <td>Acted CNN_LSTM</td>
-                    <td>
-                        <p value='acted_cnn_lstm' style="font-size: 20px;">&#128571;</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Acted CNN_LSTM_ATTENTION</td>
-                    <td>
-                        <p value='acted_cnn_lstm_attention' style="font-size: 20px;"> &#128571;</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Acted CNN_LSTM_ATTENTION_MULTITASK</td>
-                    <td>
-                        <p value='acted_cnn_lstm_attention_multitask' style="font-size: 20px;">&#128571; </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>OBSERVED CNN_LSTM</td>
-                    <td>
-                        <p value='observed_cnn_lstm' style="font-size: 20px;">&#128571;</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>OBSERVED CNN_LSTM_ATTENTION</td>
-                    <td>
-                        <p value='observed_cnn_lstm_attention' style="font-size: 20px;">&#128571; </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>OBSERVED CNN_LSTM_ATTENTION_MULTITASK</td>
-                    <td>
-                        <p value='observed_cnn_lstm_attention_multitask' style="font-size: 20px;">&#128571;</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="img/empath.png" style="width: 30px;height:30px;">Empath</td>
-                    <td>
-                        <p value='empath' style="font-size: 20px;">Enabled</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="img/vokaturi.png" style="width: 120px;height:40px;"></td>
-                    <td>
-                        <p value='vokaturi' style="font-size: 20px;"> Enabled</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="img/deepaffects.png" style="width: 120px;height: 30px;"></td>
-                    <td>
-                        <p value='deepaffects' style="font-size: 20px;"> Enabled</p>
-                    </td>
-                </tr>
-            </table>
+            <div style="margin-top: 0px; width:100%; display: flex;flex-direction:row;">
+                <table id="myTable" style="height: 100%; width: 100%;position: relative;margin-left: 100px;">
+                    <tr class="header">
+                        <th style="width:20%;">Models</th>
+                        <th style="width:80%;">Prediction Results</th>
+                    </tr>
+                    <tr>
+                        <td>Intented CNN_LSTM</td>
+                        <td>
+                            <p value='acted_cnn_lstm' style="font-size: 20px;">&#128571;</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Intented CNN_LSTM_ATTENTION</td>
+                        <td>
+                            <p value='acted_cnn_lstm_attention' style="font-size: 20px;"> &#128571;</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Intented CNN_LSTM_ATTENTION_MULTITASK</td>
+                        <td>
+                            <p value='acted_cnn_lstm_attention_multitask' style="font-size: 20px;">&#128571; </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>OBSERVED CNN_LSTM</td>
+                        <td>
+                            <p value='observed_cnn_lstm' style="font-size: 20px;">&#128571;</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>OBSERVED CNN_LSTM_ATTENTION</td>
+                        <td>
+                            <p value='observed_cnn_lstm_attention' style="font-size: 20px;">&#128571; </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>OBSERVED CNN_LSTM_ATTENTION_MULTITASK</td>
+                        <td>
+                            <p value='observed_cnn_lstm_attention_multitask' style="font-size: 20px;">&#128571;</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/empath.png" style="width: 30px;height:30px;">Empath</td>
+                        <td>
+                            <p value='empath' style="font-size: 20px;">Enabled</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/vokaturi.png" style="width: 120px;height:40px;"></td>
+                        <td>
+                            <p value='vokaturi' style="font-size: 20px;"> Enabled</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/deepaffects.png" style="width: 120px;height: 30px;"></td>
+                        <td>
+                            <p value='deepaffects' style="font-size: 20px;"> Enabled</p>
+                        </td>
+                    </tr>
+
+
+                </table>
+                <div
+                    style="margin-top:10px; display: inline-block;z-index: inherit;z-index: 100;height: 100%; width: 80%; text-align: center;">
+                    <img class="img_border" id="gender_bias_pic"
+                        src="img/emotion/intended/gender_cnn_lstm_attention_f1_score.png" style="width:70%;" />
+                    <p style="z-index: 120; text-align: center; color: #fff;">Gender F1-Scores</p>
+                    <img class="img_border" id="race_bias_pic"
+                        src="img/emotion/intended/gender_cnn_lstm_attention_f1_score.png" style="width:70%;" />
+                    <p style="z-index: 120; text-align: center; color: #fff;">Race F1-Scores</p>
+                </div>
+            </div>
         </div>
         <span class="toast" hidden>This is a toast message!</span>
     </div>

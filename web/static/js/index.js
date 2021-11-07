@@ -188,6 +188,36 @@ function onload() {
             updateCommercialResults('deepaffects', 'Disabled', true)
         }
     })
+    $('#myTable tr').hover(function (e) {
+        var target = $(this).find('p').attr('value')
+        var gender_intented_src = 'img/emotion/intended/gender_'
+        var race_intented_src = 'img/emotion/intended/race_'
+
+        var gender_observed_src = 'img/emotion/observed/gender_'
+        var race_observed_src = 'img/emotion/observed/race_'
+
+        switch (target) {
+            case "acted_cnn_lstm": gender_intented_src += 'cnn_lstm'; race_intented_src += 'cnn_lstm'; break;
+            case "acted_cnn_lstm_attention": gender_intented_src += 'cnn_lstm_attention'; race_intented_src += 'cnn_lstm_attention'; break;
+            case "acted_cnn_lstm_attention_multitask": gender_intented_src += 'cnn_lstm_attention_multitask'; race_intented_src += 'cnn_lstm_attention_multitask'; break;
+            case "observed_cnn_lstm": gender_observed_src += 'cnn_lstm'; race_observed_src += 'cnn_lstm'; break;
+            case "observed_cnn_lstm_attention": gender_observed_src += 'cnn_lstm_attention'; race_observed_src += 'cnn_lstm_attention'; break;
+            case "observed_cnn_lstm_attention_multitask": gender_observed_src += 'cnn_lstm_attention_multitask'; race_observed_src += 'cnn_lstm_attention_multitask'; break;
+            default: return;
+        }
+        var suffix = '_f1_score.png'
+        gender_intented_src += suffix
+        race_intented_src += suffix
+        gender_observed_src += suffix
+        race_observed_src += suffix
+        if (target.indexOf('acted') >= 0) {
+            $('#gender_bias_pic').attr('src', gender_intented_src)
+            $('#race_bias_pic').attr('src', race_intented_src)
+        } else {
+            $('#gender_bias_pic').attr('src', gender_observed_src)
+            $('#race_bias_pic').attr('src', race_observed_src)
+        }
+    })
 }
 
 function updateCommercialResults(name, scores, state) {
